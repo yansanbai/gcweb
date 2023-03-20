@@ -1,0 +1,13 @@
+.layout :global {
+  .ant-pro-global-header {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 24px;
+  }
+  .ant-pro-layout-content{
+    background-color: #fff;
+  }
+  .ant-layout-footer{
+    background-color: #fff;
+  }
+}
