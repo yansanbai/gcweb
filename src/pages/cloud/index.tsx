@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { request } from "ice";
 import { useRequest } from "@ice/plugin-request/hooks";
 import { PageHeader, Button, Table, Space, Modal } from "antd";
 import { PlusOutlined, RedoOutlined } from "@ant-design/icons";
@@ -6,9 +7,20 @@ import FormModal, { IRef } from "./formModal";
 import styles from "./index.module.scss";
 
 const CloudList = (props) => {
-  const { loading, data, refresh } = useRequest("/api/cloud/mylist", {
-    manual: false,
-  });
+  const [data, setData] = useState([]);
+
+  const getData = async () => {
+    const res = await request.get("/list", {
+      baseURL: "http://127.0.0.1:5000/",
+    });
+    if (res?.success) {
+      setData(res?.data);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   const modalRef = useRef<IRef>(null);
 
@@ -75,14 +87,14 @@ const CloudList = (props) => {
   ];
 
   const handleRefresh = () => {
-    refresh();
+    //refresh();
   };
 
   const handleUpload = () => {
     modalRef?.current?.show();
   };
 
-  const dataSource = Array.isArray(data?.data) ? data?.data : [];
+  //const dataSource = Array.isArray(data?.data) ? data?.data : [];
 
   return (
     <>
@@ -101,7 +113,7 @@ const CloudList = (props) => {
           刷新
         </Button>
       </div>
-      <Table loading={loading} columns={columns} dataSource={dataSource} />
+      <Table columns={columns} dataSource={data} />
       <FormModal ref={modalRef} />
     </>
   );

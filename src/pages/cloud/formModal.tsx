@@ -75,7 +75,12 @@ const formModal = forwardRef<IRef, IProps>((props, ref) => {
     formData.append("name", field.getFieldValue("name"));
     formData.append("description", field.getFieldValue("description"));
     formData.append("file", file);
-    request.post("/api/pointCloud/upload", formData);
+    request.post("/upload", formData, {
+      baseURL: "http://127.0.0.1:5000/",
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
     setVisible(false);
     setFile(null);
     setRecord({});
