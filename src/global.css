@@ -1,7 +1,7 @@
 @import 'antd/dist/antd.css';
 
-.ant-pro-page-container .ant-page-header {
-  background: white;
+.ant-layout-header {
+  background: #fff;
 }
 
 .ant-pro .ant-pro-layout .ant-pro-layout-container .ant-pro-layout-content {
@@ -19,4 +19,8 @@
 
 .ant-pro-layout-container{
   height: 100vh;
+}
+
+.site-page-header{
+  padding-left: 0 !important;
 }

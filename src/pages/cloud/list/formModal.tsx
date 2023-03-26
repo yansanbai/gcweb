@@ -15,6 +15,7 @@ import {
 import type { UploadProps } from "antd";
 import { PlusOutlined, RedoOutlined, InboxOutlined } from "@ant-design/icons";
 import styles from "./index.module.scss";
+import { requestConfig } from "@/app";
 
 export interface IRef {
   show: (mode: string) => void;
@@ -41,6 +42,7 @@ const formModal = forwardRef<IRef, IProps>((props, ref) => {
           field.setFieldsValue(r);
         } else {
           setRecord({});
+          field.resetFields();
         }
         setVisible(true);
       },
@@ -75,15 +77,11 @@ const formModal = forwardRef<IRef, IProps>((props, ref) => {
     formData.append("name", field.getFieldValue("name"));
     formData.append("description", field.getFieldValue("description"));
     formData.append("file", file);
-    request.post("/upload", formData, {
-      baseURL: "http://127.0.0.1:5000/",
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
-    });
+    request.post("/upload", formData, requestConfig);
     setVisible(false);
     setFile(null);
     setRecord({});
+    field.resetFields();
   };
 
   const text = record?.name ? "编辑" : "上传";

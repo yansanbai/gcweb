@@ -19,6 +19,7 @@ export const authConfig = defineAuthConfig(async (appData) => {
       admin: userInfo.userType === 'admin',
       user: userInfo.userType === 'user',
     },
+    
   };
 });
 
@@ -33,8 +34,8 @@ export const storeConfig = defineStoreConfig(async (appData) => {
   };
 });
 
-export const request = defineRequestConfig(() => ({
-  baseURL: '/api',
+export const requestConfig = defineRequestConfig(() => ({
+  // baseURL: 'http://127.0.0.1:5000/',
 }));
 
 export const dataLoader = defineDataLoader(async () => {

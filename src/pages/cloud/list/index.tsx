@@ -1,18 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
-import { request } from "ice";
-import { useRequest } from "@ice/plugin-request/hooks";
+import { request, history } from "ice";
+import { requestConfig } from "@/app";
 import { PageHeader, Button, Table, Space, Modal } from "antd";
 import { PlusOutlined, RedoOutlined } from "@ant-design/icons";
 import FormModal, { IRef } from "./formModal";
+import { itemRender } from "@/utils";
 import styles from "./index.module.scss";
 
 const CloudList = (props) => {
   const [data, setData] = useState([]);
 
   const getData = async () => {
-    const res = await request.get("/list", {
-      baseURL: "http://127.0.0.1:5000/",
-    });
+    const res = await request.get("/list", requestConfig);
     if (res?.success) {
       setData(res?.data);
     }
@@ -62,7 +61,13 @@ const CloudList = (props) => {
       render: (text, record, index) => {
         return (
           <Space size="middle">
-            <a>详情</a>
+            <a
+              onClick={() => {
+                history?.push(`/cloud/${record.id}`);
+              }}
+            >
+              详情
+            </a>
             <a
               onClick={() => {
                 modalRef?.current?.show(record);
@@ -101,7 +106,7 @@ const CloudList = (props) => {
       <PageHeader
         className="site-page-header"
         title="我的点云列表"
-        breadcrumb={{ routes }}
+        breadcrumb={{ routes, itemRender }}
       />
       <div className={styles.operation}>
         <Button type="primary" className={styles.btn} onClick={handleUpload}>
