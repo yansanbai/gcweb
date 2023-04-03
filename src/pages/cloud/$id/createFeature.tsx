@@ -28,6 +28,7 @@ const CreateFeature = (props) => {
     return null;
   }
   const [field] = Form.useForm();
+  const [func, setFunc] = useState("");
 
   const routes = [
     {
@@ -56,6 +57,10 @@ const CreateFeature = (props) => {
       label: "算法2",
       value: "222",
     },
+    {
+      label: "自定义算法",
+      value: "custom",
+    },
   ];
 
   // 这里是临时数据
@@ -71,8 +76,24 @@ const CreateFeature = (props) => {
           <Input disabled />
         </Form.Item>
         <Form.Item label="提取方法" name="func">
-          <Select options={options} />
+          <Select
+            options={options}
+            value={func}
+            onChange={(v) => {
+              setFunc(v);
+            }}
+          />
         </Form.Item>
+        {func === "custom" ? (
+          <Form.Item
+            label="调用路径"
+            name="route"
+            initialValue=""
+            extra="请将本地服务包装为可调用的接口"
+          >
+            <Input addonBefore="POST" />
+          </Form.Item>
+        ) : null}
       </Form>
       <div className={styles.btns}>
         <Button type="primary">提交</Button>

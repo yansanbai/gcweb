@@ -7,10 +7,14 @@
     "@ant-design/pro-layout": "^7.1.6",
     "@ant-design/pro-table": "^3.0.17",
     "@ice/runtime": "^1.0.0",
+    "@react-three/fiber": "^8.12.0",
     "antd": "^4.24.0",
+    "bizcharts": "^4.1.22",
+    "echarts": "^5.4.2",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "three": "^0.151.2"
   },
   "devDependencies": {
     "@applint/spec": "^1.2.3",
@@ -18,9 +22,9 @@
     "@ice/plugin-auth": "^1.0.0",
     "@ice/plugin-request": "^1.0.0",
     "@ice/plugin-store": "^1.0.0",
+    "@types/node": "^18.11.17",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@types/node": "^18.11.17",
     "eslint": "^8.35.0",
     "stylelint": "^15.2.0",
     "typescript": "^4.8.4"

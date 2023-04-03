@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { request, history, useParams } from "ice";
 import { CameraOutlined } from "@ant-design/icons";
 import { Descriptions, Tag, Card, PageHeader, Button, Tabs } from "antd";
-import Feature from "../components/feature";
-import Analysis from "../components/analysis";
-import Task from "../components/task";
+import Feature from "../components/featurelist";
 import { itemRender } from "@/utils";
 import styles from "./index.module.scss";
 
@@ -39,24 +37,6 @@ const Cloud = (props) => {
     },
     {
       breadcrumbName: `${detail?.name}`,
-    },
-  ];
-
-  const items = [
-    {
-      key: "1",
-      label: `特征数据`,
-      children: <Feature id={id} />,
-    },
-    {
-      key: "2",
-      label: `分析数据`,
-      children: <Analysis id={id} />,
-    },
-    {
-      key: "3",
-      label: `任务列表`,
-      children: <Task id={id} />,
     },
   ];
 
@@ -96,7 +76,7 @@ const Cloud = (props) => {
           </Descriptions.Item>
         </Descriptions>
       </Card>
-      <Tabs defaultActiveKey="1" items={items} className={styles.tabs} />
+      <Feature id={id} />,
     </>
   );
 };

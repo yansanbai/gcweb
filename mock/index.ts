@@ -27,4 +27,13 @@ export default {
       gmtCreate: "2023-3-20 10:23:40",
     }
   },
+  "GET /cloud/feature/detail": {
+    success: true,
+    data: {
+      id: 1,
+      name: "特征1",
+      description: "测试点云功能",
+      gmtCreate: "2023-3-20 10:23:40",
+    }
+  },
 };
