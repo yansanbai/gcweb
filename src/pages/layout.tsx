@@ -17,7 +17,7 @@ export default function Layout() {
 
   return (
     <ProLayout
-      menu={{ defaultOpenAll: true }}
+      menu={{ defaultOpenAll: false }}
       className={styles.layout}
       // logo={<img src={logo} alt="logo" />}
       title="三维园林建模"

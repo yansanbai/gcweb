@@ -5402,6 +5402,11 @@ number-is-nan@^1.0.0:
   resolved "https://registry.npmmirror.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha512-4jbtZXNAsfZbAHiiqjLPBiCl16dES1zI4Hpzzxw61Tk+loF+sBDBKx1ICKKKwIqQ7M0mFn1TmkN7euSncWgHiQ==
 
+numpy@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.npmmirror.com/numpy/-/numpy-0.0.1.tgz#c6bbd4c49b45bd537f768a09c9220a290de41598"
+  integrity sha512-HPoSFyRtH4dRUGjI6bzeVKgfOeNtIAWLvVWMqbaNGmWKE+npdnZ6L78TEJELgZBb+9XpL6r16vOz1jaQ7YVI7Q==
+
 object-assign@4.x, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.npmmirror.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"

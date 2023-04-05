@@ -40,14 +40,14 @@ const Feature = (props) => {
       width: 200,
       render: (text) => {
         switch (text) {
-          case "INIT":
-            return <Tag color="blue">待提取</Tag>;
+          case "CLOSE":
+            return <Tag color="gray">已取消</Tag>;
           case "RUNNING":
             return <Tag color="green">提取中</Tag>;
           case "FAIL":
             return <Tag color="red">失败</Tag>;
           case "FINISH":
-            return <Tag color="gray">已完成</Tag>;
+            return <Tag color="blue">已完成</Tag>;
         }
       },
     },

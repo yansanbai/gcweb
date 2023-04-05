@@ -55,7 +55,12 @@ const Cloud = (props) => {
                 <Tag style={{ borderRadius: 4 }}>{detail?.id}</Tag>
               </div>
               <div>
-                <Button type="primary">
+                <Button
+                  type="primary"
+                  onClick={() => {
+                    history.push(`/cloud/${id}/view`);
+                  }}
+                >
                   <CameraOutlined />
                   三维展示
                 </Button>

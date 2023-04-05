@@ -66,7 +66,12 @@ const FeatureDetail = (props) => {
                 <Tag style={{ borderRadius: 4 }}>{featureDetail?.id}</Tag>
               </div>
               <div>
-                <Button type="primary">
+                <Button
+                  type="primary"
+                  onClick={() => {
+                    history.push(`/cloud/${id}/feature/${featureId}/view`);
+                  }}
+                >
                   <CameraOutlined />
                   三维展示
                 </Button>
