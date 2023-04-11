@@ -31,7 +31,7 @@ export default {
     success: true,
     data: {
       id: 1,
-      name: "特征1",
+      name: "特征集1",
       description: "测试点云功能",
       gmtCreate: "2023-3-20 10:23:40",
     }

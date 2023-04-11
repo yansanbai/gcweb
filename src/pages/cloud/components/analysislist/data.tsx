@@ -1,6 +1,6 @@
 export const cards = [
   {
-    name: "椅子",
+    name: "亭子",
     data: [
       {
         x: 0.1,
@@ -25,7 +25,7 @@ export const cards = [
     ],
   },
   {
-    name: "桌子",
+    name: "假山石",
     data: [
       {
         x: 0.1,
@@ -50,7 +50,7 @@ export const cards = [
     ],
   },
   {
-    name: "桌子2",
+    name: "湖边",
     data: [
       {
         x: 0.1,
@@ -75,7 +75,7 @@ export const cards = [
     ],
   },
   {
-    name: "桌子3",
+    name: "屋檐",
     data: [
       {
         x: 0.1,

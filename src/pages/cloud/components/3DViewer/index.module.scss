@@ -34,3 +34,20 @@
     background-color: #1890FF;
     margin-right: 8px;
 }
+
+.colorbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    canvas{
+        flex: 0 0 auto
+    }
+}
+
+.boxForm{
+    :global{
+        .ant-form-item{
+            margin-bottom: 8px !important;
+        }
+    }
+}

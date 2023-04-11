@@ -21,11 +21,12 @@ import {
 } from "antd";
 import styles from "./index.module.scss";
 import ReactDOM from "react-dom";
-import { Chart, LineAdvance } from "bizcharts";
+import { Chart, LineAdvance, Interval, getTheme, Geom } from "bizcharts";
 import { cards } from "./data";
+import Histogram from "./test";
 
 const Analysis = (props) => {
-  const { id } = props;
+  const { id, featureId } = props;
 
   return (
     <>
@@ -50,11 +51,13 @@ const Analysis = (props) => {
           type="primary"
           className={styles.btn}
           onClick={() => {
-            history.push(`/cloud/${id}/createFeature`);
+            history.push(
+              `/cloud/${id}/feature/${featureId}/view?analysis=true`
+            );
           }}
         >
           <PlusOutlined />
-          新增分析
+          开始分析
         </Button>
       </div>
       <div className={styles.charts}>
@@ -74,9 +77,7 @@ const Analysis = (props) => {
                 </Space>
               }
             >
-              <Chart autoFit height={300} data={item?.data}>
-                <LineAdvance point area position="x*y" />
-              </Chart>
+              <Histogram value={item?.data} />
             </Card>
           );
         })}

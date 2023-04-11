@@ -92,7 +92,7 @@ const FeatureDetail = (props) => {
           </Descriptions.Item>
         </Descriptions>
       </Card>
-      <Analysis id={id} />,
+      <Analysis id={id} featureId={featureId} />,
     </>
   );
 };

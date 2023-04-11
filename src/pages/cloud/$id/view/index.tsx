@@ -2,7 +2,11 @@ import React, { Component, useEffect, useRef } from "react";
 import { request, history, useParams } from "ice";
 import { Card, PageHeader, Form, Slider, Select } from "antd";
 import { itemRender } from "@/utils";
-import ThreeView from "../../components/threeView";
+import ThreeView from "../../components/3DViewer";
+import PointPlugin from "../../components/3DViewer/PointPlugin";
+import CameraPlugin from "../../components/3DViewer/CameraPlugin";
+import * as THREE from "three";
+import { PLYLoader } from "three/examples/jsm/loaders/PLYLoader.js";
 import styles from "./index.module.scss";
 
 const Viewer = () => {
@@ -32,6 +36,30 @@ const Viewer = () => {
     },
   ];
 
+  const loadFile = (func) => {
+    const loader = new PLYLoader();
+    loader.load("/test.ply", (model) => {
+      func(model);
+    });
+  };
+
+  const plugins = [
+    {
+      title: "点设置",
+      key: "points",
+      component: (pluginProps) => {
+        return <PointPlugin {...pluginProps} />;
+      },
+    },
+    {
+      title: "相机设置",
+      key: "camera",
+      component: (pluginProps) => {
+        return <CameraPlugin {...pluginProps} />;
+      },
+    },
+  ];
+
   return (
     <>
       <PageHeader
@@ -39,7 +67,11 @@ const Viewer = () => {
         breadcrumb={{ routes, itemRender }}
         title="点云: 测试case1"
       />
-      <ThreeView operation={[0, 1]} file="/test.ply" />
+      <ThreeView
+        loadFile={loadFile}
+        plugins={plugins}
+        defaultActiveKey={["camera"]}
+      />
     </>
   );
 };
