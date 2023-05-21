@@ -1,12 +1,12 @@
-import { GithubOutlined } from '@ant-design/icons';
-import { DefaultFooter } from '@ant-design/pro-layout';
+import { GithubOutlined } from "@ant-design/icons";
+import { DefaultFooter } from "@ant-design/pro-layout";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <DefaultFooter
-      copyright={`${currentYear} xxx工作室`}
+      copyright={`${currentYear}`}
       // links={[
       //   {
       //     key: 'ice.js',

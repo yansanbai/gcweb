@@ -16,14 +16,9 @@ const asideMenuConfig: MenuDataItem[] = [
     icon: <CloudOutlined />,
   },
   {
-    name: "模型库",
-    path: "/model",
+    name: "模型",
+    path: "/model/list",
     icon: <DatabaseOutlined />,
-  },
-  {
-    name: "工作台",
-    path: "/workbanch",
-    icon: <DesktopOutlined />,
   },
 ];
 

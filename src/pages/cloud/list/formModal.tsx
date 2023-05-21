@@ -2,7 +2,6 @@ import React, { useState, forwardRef, useImperativeHandle } from "react";
 import { request } from "ice";
 import { useRequest } from "@ice/plugin-request/hooks";
 import {
-  PageHeader,
   Button,
   Table,
   Space,
@@ -117,7 +116,7 @@ const formModal = forwardRef<IRef, IProps>((props, ref) => {
                 <InboxOutlined />
               </p>
               <p className="ant-upload-text">点击此处或拖拽文件上传</p>
-              <p className="ant-upload-hint">仅支持上传...格式文件</p>
+              <p className="ant-upload-hint">仅支持上传 .ply 格式文件</p>
             </Dragger>
           </Form.Item>
         )}

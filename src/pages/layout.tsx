@@ -20,7 +20,7 @@ export default function Layout() {
       menu={{ defaultOpenAll: false }}
       className={styles.layout}
       // logo={<img src={logo} alt="logo" />}
-      title="三维园林建模"
+      title="三维场景点云素材提取系统"
       location={{
         pathname: location.pathname,
       }}

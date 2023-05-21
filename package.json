@@ -9,7 +9,7 @@
     "@antv/data-set": "^0.11.8",
     "@ice/runtime": "^1.0.0",
     "@react-three/fiber": "^8.12.0",
-    "antd": "^4.24.0",
+    "antd": "^5.4.6",
     "bizcharts": "^4.1.22",
     "echarts": "^5.4.2",
     "lodash": "^4.17.21",
